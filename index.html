@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1.0,user-scalable=no"
+    />
+    <title>Lentera Kecil 🏮</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Baloo+2:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- SPLASH -->
+    <div id="scr-splash" class="scr active">
+      <div class="splash-bg">
+        <div class="sstar s1">⭐</div>
+        <div class="sstar s2">🌟</div>
+        <div class="sstar s3">✨</div>
+        <div class="sstar s4">⭐</div>
+        <div class="fly f1"></div>
+        <div class="fly f2"></div>
+        <div class="fly f3"></div>
+        <div class="fly f4"></div>
+        <div class="stree t1">🌳</div>
+        <div class="stree t2">🌲</div>
+        <div class="stree t3">🌳</div>
+        <div class="stree t4">🌲</div>
+      </div>
+      <div class="splash-body">
+        <div class="lantern" id="lantern">🏮</div>
+        <h1 class="splash-title">Lentera Kecil</h1>
+        <p class="splash-sub">✨ Dunia Dongeng Nusantara ✨</p>
+        <button class="btn-start" id="btn-start">📖 Mulai Membaca!</button>
+        <p class="splash-note">untuk anak usia 4–10 tahun</p>
+      </div>
+    </div>
+
+    <!-- LIBRARY -->
+    <div id="scr-library" class="scr">
+      <header class="lib-hdr">
+        <div class="lib-logo">🏮 Lentera Kecil</div>
+        <div class="star-badge">⭐ <span id="star-count">0</span></div>
+      </header>
+      <div class="lib-search">
+        <span>🔍</span>
+        <input id="search" type="text" placeholder="Cari cerita..." />
+      </div>
+      <div class="lib-tags" id="tags">
+        <button class="tag active" data-tag="all">🌈 Semua</button>
+        <button class="tag" data-tag="hewan">🐾 Hewan</button>
+        <button class="tag" data-tag="legenda">🏔️ Legenda</button>
+        <button class="tag" data-tag="kebaikan">💛 Kebaikan</button>
+        <button class="tag" data-tag="keluarga">🏡 Keluarga</button>
+      </div>
+      <p class="greeting" id="greeting"></p>
+      <div class="grid" id="grid"></div>
+    </div>
+
+    <!-- READER -->
+    <div id="scr-reader" class="scr">
+      <button class="btn-home" id="btn-home">🏠</button>
+      <button class="btn-snd" id="btn-snd">🔊</button>
+      <div class="prog-wrap"><div class="prog-bar" id="prog-bar"></div></div>
+
+      <!-- SCENE STAGE: background + character (top zone, never overlaps narration) -->
+      <div class="scene-stage" id="scene" tabindex="0">
+        <div class="sc-bg" id="sc-bg">
+          <div class="sc-sky" id="sc-sky">
+            <div class="sky-deco" id="sky-deco"></div>
+          </div>
+          <div class="sc-mid" id="sc-mid"></div>
+          <div class="sc-ground" id="sc-ground">
+            <div class="ground-deco" id="ground-deco"></div>
+          </div>
+          <div class="sc-ptcl" id="sc-ptcl"></div>
+        </div>
+        <div class="sc-char" id="sc-char">
+          <div class="char-wrap" id="char-wrap"></div>
+          <div class="char-shadow"></div>
+        </div>
+        <div class="scene-title-bar" id="scene-title-bar"></div>
+        <div class="tap-hint" id="tap-hint">👆 Ketuk untuk lanjut</div>
+      </div>
+
+      <!-- NARRATION ZONE: always below scene, never overlaps character -->
+      <div class="narr-zone" id="narr-panel">
+        <div class="narr-inner">
+          <span class="narr-icon" id="narr-icon">📖</span>
+          <p class="narr-text" id="narr-text"></p>
+        </div>
+      </div>
+
+      <div class="reader-nav">
+        <button class="btn-nav" id="btn-prev">‹</button>
+        <div class="dots" id="dots"></div>
+        <button class="btn-nav" id="btn-next">›</button>
+      </div>
+    </div>
+
+    <!-- END CARD -->
+    <div id="scr-end" class="scr">
+      <div class="end-confetti" id="confetti"></div>
+      <div class="end-card">
+        <div class="end-emoji" id="end-emoji">🎉</div>
+        <h2 class="end-title">Selesai dibaca!</h2>
+        <p class="end-stitle" id="end-stitle"></p>
+        <div class="moral-box">
+          <p class="moral-lbl">🌱 Pesan dari cerita ini:</p>
+          <p class="moral-txt" id="moral-txt"></p>
+        </div>
+        <div class="end-stars">
+          <span class="estr" style="animation-delay: 0.1s">⭐</span>
+          <span class="estr" style="animation-delay: 0.3s">⭐</span>
+          <span class="estr" style="animation-delay: 0.5s">⭐</span>
+        </div>
+        <div class="end-btns">
+          <button class="btn-end primary" id="btn-again">🔄 Baca Lagi</button>
+          <button class="btn-end secondary" id="btn-library">
+            📚 Cerita Lain
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="stories.js"></script>
+    <script src="engine.js"></script>
+  </body>
+</html>
